@@ -1,0 +1,246 @@
+<!-- HIT template: ImageTagging-v3.0 --><!-- Bootstrap v3.0.3 --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" integrity="sha384-IS73LIqjtYesmURkDE9MXKbXqYA8rvKEp/ghicjem7Vc3mGRdQRptJSz60tvrB6+" rel="stylesheet" /><!-- The following snippet enables the 'responsive' behavior on smaller screens -->
+<meta content="width=device-width,initial-scale=1" name="viewport" /><!-- Instructions -->
+<section class="container" id="TaggingOfAnImage">
+<div class="row">
+<div class="col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary"><!-- WARNING: the ids "collapseTrigger" and "instructionBody" are being used to enable expand/collapse feature --><a class="panel-heading" href="javascript:void(0);" id="collapseTrigger"><strong>Instructions</strong> <span class="collapse-text">(Click to expand)</span> </a>
+<div class="panel-body" id="instructionBody">
+<p>You must answer all 3 questions in this section.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- End Instructions --><!-- Image Tagging Layout --></section>
+<script>
+<!--
+function clickColor(hex, seltop, selleft, html5) {
+    var c, cObj, colormap, areas, i, areacolor, cc;
+    if (html5 && html5 == 5)  {
+        c = document.getElementById("html5colorpicker").value;
+    } else {
+        if (hex == 0)  {
+            c = document.getElementById("entercolor").value;
+        } else {
+            c = hex;
+        }
+    }
+    cObj = w3color(c);
+    colorhex = cObj.toHexString();
+    if (cObj.valid) {
+        clearWrongInput();
+    } else {
+        wrongInput();
+        return;
+    }
+    r = cObj.red;
+    g = cObj.green;
+    b = cObj.blue;
+    document.getElementById("colornamDIV").innerHTML = (cObj.toName() || "");
+    document.getElementById("colorhexDIV").innerHTML = cObj.toHexString();
+    document.getElementById("colorrgbDIV").innerHTML = cObj.toRgbString();
+    document.getElementById("colorhslDIV").innerHTML = cObj.toHslString();    
+    if ((!seltop || seltop == -1) && (!selleft || selleft == -1)) {
+        colormap = document.getElementById("colormap");
+        areas = colormap.getElementsByTagName("AREA");
+        for (i = 0; i < areas.length; i++) {
+            areacolor = areas[i].getAttribute("onmouseover").replace('mouseOverColor("', '');
+            areacolor = areacolor.replace('")', '');
+            if (areacolor.toLowerCase() == colorhex) {
+                cc = areas[i].getAttribute("onclick").replace(')', '').split(",");
+                seltop = Number(cc[1]);
+                selleft = Number(cc[2]);
+            }
+        }
+    }
+    if ((seltop+200)>-1 && selleft>-1) {
+        document.getElementById("selectedhexagon").style.top=seltop + "px";
+        document.getElementById("selectedhexagon").style.left=selleft + "px";
+        document.getElementById("selectedhexagon").style.visibility="visible";
+  } else {
+        document.getElementById("divpreview").style.backgroundColor = cObj.toHexString();
+        document.getElementById("selectedhexagon").style.visibility = "hidden";
+  }
+    document.getElementById("selectedcolor").style.backgroundColor = cObj.toHexString();
+    document.getElementById("html5colorpicker").value = cObj.toHexString();  
+  document.getElementById('slideRed').value = r;
+  document.getElementById('slideGreen').value = g;
+  document.getElementById('slideBlue').value = b;
+  changeRed(r);changeGreen(g);changeBlue(b);
+  changeColor();
+  document.getElementById("fixed").style.backgroundColor = cObj.toHexString();
+}
+//-->
+</script>
+
+<div class="row" id="workContent">
+<form>
+<ol>
+  <li>Identify the colors indicated by the below patches: (Your answer should not exceed two words for each response).<br />
+  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+  <table style="width:100%">
+    <tbody>
+      <tr>
+        <th>
+        <h5>Color patch</h5>
+        </th>
+        <th>
+        <h5>Name the color<br />
+        (example: purple, pale green, light brown etc)</h5>
+        </th>
+        <th>
+        <h5>Name the color relating to a real world object<br />
+        (example: sky blue, blood red, apple green etc)</h5>
+        </th>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(100, 149, 237); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(184, 134, 11); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(189, 183, 107); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(139, 0, 139); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(143, 188, 143); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(205, 92, 92); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(169, 169, 169); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(255, 182, 193); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+      <tr>
+        <td>
+        <div id="divpreview" style="background-color: rgb(245, 245, 245); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
+        </td>
+        <td><input name="color" type="text" /></td>
+        <td><input name="color-realworld" type="text" /></td>
+      </tr>
+    </tbody>
+  </table>
+  </li>
+  <br />
+  <li>Pick the color from the RGB color palette that matches the below mentioned colors.<br />
+  (Click on each of the boxes below to display the color palette. Select from the basic colors or use the mouse to select the desired color from the palette and click on ok button).
+  <table style="width:100%">
+    <tbody>
+      <tr>
+        <td>
+        <h5>Gold:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Ghost white:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Chocolate brown:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+      </tr>
+      <tr>
+        <td>
+        <h5>Midnight blue:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Olive green:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Sandy brown:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+      </tr>
+      <tr>
+        <td>
+        <h5>Dark Red:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Snow white:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <td>
+        <h5>Cyan:</h5>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+      </tr>
+    </tbody>
+  </table>
+  </li>
+  <br />
+  <li>Indicate your mother tongue or native language (English, Hindi, German, Mandarin etc): <input name="color" type="text" /></li>
+</ol>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+</form>
+</div>
+<!-- End Image Tagging Layout --><!-- Open internal style sheet -->
+<style type="text/css">#collapseTrigger{
+  color:#fff;
+  display: block;
+  text-decoration: none;
+}
+#submitButton{
+  white-space: normal;
+}
+.image{
+  margin-bottom: 15px;
+}
+.radio:first-of-type{
+  margin-top: -5px;
+}
+</style>
+<!-- Close internal style sheet --><!-- Please note that Bootstrap CSS/JS and JQuery are 3rd party libraries that may update their url/code at any time. Amazon Mechanical Turk (MTurk) is including these libraries as a default option for you, but is not responsible for any changes to the external libraries --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script><script>
+  $(document).ready(function() {
+    // Instructions expand/collapse
+    var content = $('#instructionBody');
+    var trigger = $('#collapseTrigger');
+    content.hide();
+    $('.collapse-text').text('(Click to expand)');
+    trigger.click(function(){
+      content.toggle();
+      var isVisible = content.is(':visible');
+      if(isVisible){
+        $('.collapse-text').text('(Click to collapse)');
+      }else{
+        $('.collapse-text').text('(Click to expand)');
+      }
+    });
+    // end expand/collapse
+  });
+</script>
