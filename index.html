@@ -88,11 +88,18 @@ function clickColor(hex, seltop, selleft, html5) {
   changeColor();
   document.getElementById("fixed").style.backgroundColor = cObj.toHexString();
 }
+function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
 //-->
 </script>
 
 <div class="row" id="workContent">
-<form action="https://script.google.com/macros/s/AKfycbyKRIdBoK58gAXUIkxuKX9j4rvsZI1eiu3xKTruwl-LjvoaECs/exec">
+<form name="myForm" onsubmit="return validateForm()" method="post">>
 
     <ol>
   <li>Identify the colors indicated by the below patches: (Your answer should not exceed two words for each response).<br />
@@ -116,64 +123,64 @@ function clickColor(hex, seltop, selleft, html5) {
         <td>
         <div id="divpreview" style="background-color: rgb(100, 149, 237); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(184, 134, 11); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(189, 183, 107); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(139, 0, 139); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(143, 188, 143); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(205, 92, 92); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(169, 169, 169); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(255, 182, 193); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
       <tr>
         <td>
         <div id="divpreview" style="background-color: rgb(245, 245, 245); visibility: visible; position: relative; width: 200px; height: 50px ">&nbsp;</div>
         </td>
-        <td><input name="color" type="text" /></td>
-        <td><input name="color-realworld" type="text" /></td>
+        <td><input name="color" type="text" required/></td>
+        <td><input name="color-realworld" type="text" required/></td>
       </tr>
     </tbody>
   </table>
@@ -186,41 +193,41 @@ function clickColor(hex, seltop, selleft, html5) {
       <tr>
         <td>
         <h5>Gold:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
         <td>
         <h5>Ghost white:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
         <td>
         <h5>Chocolate brown:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
       </tr>
       <tr>
         <td>
         <h5>Midnight blue:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
         <td>
         <h5>Olive green:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
         <td>
         <h5>Sandy brown:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
       </tr>
       <tr>
         <td>
         <h5>Dark Red:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
         <td>
         <h5>Snow white:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
         <td>
         <h5>Cyan:</h5>
-        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" />​</td>
+        <input id="html5colorpicker" onchange="clickColor(0, -1, -1, 5)" style="width:200px; height: 60px" type="color" value="#ffffff" required/>​</td>
       </tr>
     </tbody>
   </table>
   </li>
   <br />
-  <li>Indicate your mother tongue or native language (English, Hindi, German, Mandarin etc): <input name="color" type="text" /></li>
+  <li>Indicate your mother tongue or native language (English, Hindi, German, Mandarin etc): <input name="color" type="text" required/></li>
 </ol>
 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>
