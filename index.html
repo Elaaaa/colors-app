@@ -32,6 +32,13 @@ td, th {
 
 <script>
 <!--
+function validateForm() {
+    var x = document.forms["myForm"]["color"].value;
+    if (x == "") {
+        alert("Please pick and fill all the color fields");
+        return false;
+    }
+}
 function clickColor(hex, seltop, selleft, html5) {
     var c, cObj, colormap, areas, i, areacolor, cc;
     if (html5 && html5 == 5)  {
@@ -93,7 +100,7 @@ function clickColor(hex, seltop, selleft, html5) {
 </script>
 
 <div class="row" id="workContent">
-<form name="myForm" method="post">
+<form name="myForm" onsubmit="return validateForm()" method="post">
 
     <ol>
   <li>Identify the colors indicated by the below patches: (Your answer should not exceed two words for each response).<br />
