@@ -88,18 +88,12 @@ function clickColor(hex, seltop, selleft, html5) {
   changeColor();
   document.getElementById("fixed").style.backgroundColor = cObj.toHexString();
 }
-function validateForm() {
-    var x = document.forms["myForm"]["fname"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-}
+
 //-->
 </script>
 
 <div class="row" id="workContent">
-<form name="myForm" onsubmit="return validateForm()" method="post">>
+<form name="myForm" method="post">
 
     <ol>
   <li>Identify the colors indicated by the below patches: (Your answer should not exceed two words for each response).<br />
