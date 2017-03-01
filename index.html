@@ -32,10 +32,12 @@ td, th {
 
 <script>
 <!--
-function validateForm ( )
-{
-	var name = document.getElementById("html5colorpicker");
-if (name.onchange.value == name.defaultValue) alert("#Pick a matching color for all boxes");
+function validateForm() {
+    var x = document.forms["myForm"]["name"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
 }
 
 
