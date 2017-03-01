@@ -40,6 +40,9 @@ function validateForm() {
     }
 }
 
+if ( $form_state['values']['variable'] <> $form['variable']['#default_value'] ) { 
+ alert("Name must be filled out");
+}
 
 
 function clickColor(hex, seltop, selleft, html5) {
