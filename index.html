@@ -32,12 +32,16 @@ td, th {
 
 <script>
 <!--
-function validateForm() {
-    var x = document.forms["myForm"]["ncolor"].value;
-    if (x == "#0") {
-        alert("Please pick and fill all the color fields");
-        return false;
-    }
+function validateForm ( )
+{
+	valid = true;
+
+        if ( document.myForm.ncolor.value == "" )
+        {
+                alert ( "Please pick a valid color for each of the color boxes before you submit." );
+                valid = false;
+        }
+               return valid;
 }
 function clickColor(hex, seltop, selleft, html5) {
     var c, cObj, colormap, areas, i, areacolor, cc;
