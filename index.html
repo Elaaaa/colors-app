@@ -34,15 +34,12 @@ td, th {
 <!--
 function validateForm ( )
 {
-	valid = true;
-
-        if ( document.myForm.ncolor.onchange == false )
-        {
-                alert ( "Please pick a valid color for each of the color boxes before you submit." );
-                valid = false;
-        }
-               return valid;
+	var name = document.getElementById("html5colorpicker");
+if (name.value == name.defaultValue) alert("#Pick a matching color for all boxes");
 }
+
+
+
 function clickColor(hex, seltop, selleft, html5) {
     var c, cObj, colormap, areas, i, areacolor, cc;
     if (html5 && html5 == 5)  {
